@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Message } from './message.model';
 
 @Component({
     selector: 'app-message',
@@ -21,8 +22,6 @@ import { Component } from '@angular/core';
 })
 
 export class MessageComponent {
-     message = {
-    content: 'something';
-    author: 'Bjim'
-    }
+    // @Input makes message assignable from the outside, i.e. from app.component.html
+    @Input() message: Message //message: Message makes sure messages will have the structure specified in message.model.ts
 }
