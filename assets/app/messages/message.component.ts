@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Message } from './message.model';
 
 @Component({
@@ -24,4 +24,10 @@ import { Message } from './message.model';
 export class MessageComponent {
     // @Input makes message assignable from the outside, i.e. from app.component.html
     @Input() message: Message //message: Message makes sure messages will have the structure specified in message.model.ts
+    @Output() editClicked = new EventEmitter<string>();
+
+    onEdit(){
+        this.editClicked.emit('a new value'); //emitting a new event
+    }
+    
 }
