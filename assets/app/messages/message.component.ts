@@ -26,6 +26,8 @@ export class MessageComponent {
     @Input() message: Message //message: Message makes sure messages will have the structure specified in message.model.ts
     @Output() editClicked = new EventEmitter<string>();
 
+    color = '#BADA55';
+    
     onEdit(){
         this.editClicked.emit('a new value'); //emitting a new event
     }
