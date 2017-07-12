@@ -1,7 +1,18 @@
 <div class="col-md-8 col-md-offset-2">
+    <!--ngNativeValidate makes html validation (see 'required' below) work-->
+    <form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <!--the ngForm here says: give me access to the JS object behind the html form-->
     <div class="form-group">
         <label for="content">Content</label>
-        <input type="text" class="form-control" #input> <!-- the #input here is a reference we can use e.g. below with onSave -->
+        <input 
+        type="text"
+        class="form-control"
+        id="content"
+        name="content"
+        required
+        ngModel> <!-- ngModel (without the []) says: 'this input on which I'm placed should be registered as a control of the form' -->
+        <!--the name above will be detected by Angular to store value of this input on a control-->
     </div>
-    <button class="btn btn-primary" type="submit" (click)="onSave(input.value)">Save</button>
+    <button class="btn btn-primary" type="submit">Save</button>
+    </form>
 </div>
