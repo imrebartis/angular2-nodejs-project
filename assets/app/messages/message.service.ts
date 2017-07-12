@@ -1,14 +1,14 @@
 import { Message } from './message.model';
 
 export class MessageService {
-   private messages: Message[] = [];
+   private messages: Message[] = []; // this is the exact same array as the one in message-list ts
 
     addMessage(message : Message) {
         this.messages.push(message);
         console.log(this.messages)
     }
 
-    getMessage(){
+    getMessages(){
         return this.messages;
     }
 
