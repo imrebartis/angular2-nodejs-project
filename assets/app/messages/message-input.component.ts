@@ -4,10 +4,7 @@ import { Message } from './message.model';
 
 @Component({
     selector: 'app-message-input',
-    templateUrl: 'message-input.component.html',
-    providers: [
-        MessageService //providers lets us use this service only in this component, see class below
-    ]
+    templateUrl: 'message-input.component.html'
 })
 
 export class MessageInputComponent {
