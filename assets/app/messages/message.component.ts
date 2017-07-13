@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Message } from './message.model';
+import { MessageService } from './message.service';
 
 @Component({
     selector: 'app-message',
@@ -27,9 +28,15 @@ export class MessageComponent {
     @Output() editClicked = new EventEmitter<string>();
 
     color = '#BADA55';
+
+    constructor(private messageService : MessageService) {} //injecting messageServices in order to make onDelete() work
     
     onEdit(){
         this.editClicked.emit('a new value'); //emitting a new event
+    }
+
+    onDelete(){
+        this.messageService.deleteMessage(this.message);
     }
     
 }
