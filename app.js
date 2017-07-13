@@ -32,7 +32,7 @@ app.use(function (req, res, next) {
 
 app.use('/', appRoutes);
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handler, BECAUSE OF THIS E.G. /AUTH WORKS EVEN THOUGH IN ROUTES/APP.JS WE DON'T HAVE SUCH A ROUTE
 app.use(function (req, res, next) {
     return res.render('index');
 });
