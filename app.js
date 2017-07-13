@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
+var messageRoutes = require('./routes/messages');
+var userRoutes = require('./routes/user');
 
 var app = express();
 mongoose.connect('localhost:27017/node-angular');
@@ -30,6 +32,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/message', messageRoutes); //IMPORTANT: MORE SPECIFIC ROUTES HAVE TO BE LISTED FIRST
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler, BECAUSE OF THIS E.G. /AUTH WORKS EVEN THOUGH IN ROUTES/APP.JS WE DON'T HAVE SUCH A ROUTE
