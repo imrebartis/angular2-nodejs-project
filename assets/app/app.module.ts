@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // ngModel in the html needs FormsModule + formGroup in signup html needs ReactiveFormsModule
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from "./app.component";
 import { MessageComponent } from "./messages/message.component";
@@ -27,7 +28,13 @@ import { routing } from './app.routing';
         SignupComponent,
         SigninComponent
     ],
-    imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule], // ngModel in the html needs FormsModule + formGroup in signup needs ReactiveFormsModule
+    imports: [
+        BrowserModule,
+        FormsModule,
+        routing,
+        ReactiveFormsModule,
+        HttpModule
+        ], // ngModel in the html needs FormsModule + formGroup in signup needs ReactiveFormsModule
     bootstrap: [AppComponent]
 })
 export class AppModule {
