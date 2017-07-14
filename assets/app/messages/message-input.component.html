@@ -10,9 +10,9 @@
         id="content"
         name="content"
         required
-        ngModel> <!-- ngModel (without the []) says: 'this input on which I'm placed should be registered as a control of the form' -->
-        <!--the name above will be detected by Angular to store value of this input on a control-->
+        [ngModel]="message?.content"> <!-- the '?' mark says: do this only if message is not undefined -->
     </div>
+    <button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
     <button class="btn btn-primary" type="submit">Save</button>
     </form>
 </div>
