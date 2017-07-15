@@ -1,23 +1,20 @@
 import { Component, OnInit } from "@angular/core";
-import { NgForm } from '@angular/forms';
+import { NgForm } from "@angular/forms";
 
-import { MessageService } from './message.service';
-import { Message } from './message.model';
+import { MessageService } from "./message.service";
+import { Message } from "./message.model";
 
 @Component({
     selector: 'app-message-input',
-    templateUrl: 'message-input.component.html'
+    templateUrl: './message-input.component.html'
 })
-
 export class MessageInputComponent implements OnInit {
-
     message: Message;
 
-    constructor (private messageService: MessageService) {
+    constructor(private messageService: MessageService) {}
 
-    }
     onSubmit(form: NgForm) { //the type is NgForm, but in html it's ngForm
-       if (this.message) {
+        if (this.message) {
             // Edit
             this.message.content = form.value.content;
             this.messageService.updateMessage(this.message)
@@ -44,8 +41,7 @@ export class MessageInputComponent implements OnInit {
 
     ngOnInit() {
         this.messageService.messageIsEdit.subscribe(
-            (message: Message) => this.message = message//setting the message as message that was passed thru eventEmitter
+            (message: Message) => this.message = message //setting the message as message that was passed thru eventEmitter
         );
-
-    };
+    }
 }

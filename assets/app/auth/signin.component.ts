@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
-@Component( {
+@Component({
     selector: 'app-signin',
     templateUrl: './signin.component.html'
 })
-
 export class SigninComponent {
     myForm: FormGroup;
 
-    onSubmit(){
+    onSubmit() {
         console.log(this.myForm);
         this.myForm.reset();
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.myForm = new FormGroup({
             email: new FormControl('', Validators.required),
              password: new FormControl('', Validators.required)   

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // ngModel in the html needs FormsModule + formGroup in signup html needs ReactiveFormsModule
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // ngModel in the html needs FormsModule + formGroup in signup html needs ReactiveFormsModule
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from "./app.component";
@@ -8,12 +8,12 @@ import { MessageComponent } from "./messages/message.component";
 import { MessageListComponent } from "./messages/message-list.component";
 import { MessageInputComponent } from "./messages/message-input.component";
 import { MessagesComponent } from "./messages/messages.component";
-import { AuthenticationComponent } from './auth/authentication.component';
-import { LogoutComponent } from './auth/logout.component';
-import { SignupComponent } from './auth/signup.component';
-import { SigninComponent } from './auth/signin.component';
-import { HeaderComponent } from './header.component';
-import { routing } from './app.routing';
+import { AuthenticationComponent } from "./auth/authentication.component";
+import { HeaderComponent } from "./header.component";
+import { routing } from "./app.routing";
+import { LogoutComponent } from "./auth/logout.component";
+import { SignupComponent } from "./auth/signup.component";
+import { SigninComponent } from "./auth/signin.component";
 
 @NgModule({
     declarations: [
@@ -34,7 +34,7 @@ import { routing } from './app.routing';
         routing,
         ReactiveFormsModule,
         HttpModule
-        ], // ngModel in the html needs FormsModule + formGroup in signup needs ReactiveFormsModule
+    ], // ngModel in the html needs FormsModule + formGroup in signup html needs ReactiveFormsModule
     bootstrap: [AppComponent]
 })
 export class AppModule {

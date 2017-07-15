@@ -1,18 +1,18 @@
 <div class="col-md-8 col-md-offset-2">
-    <!--ngNativeValidate makes html validation (see 'required' below) work-->
+        <!--ngNativeValidate makes html validation (see 'required' below) work-->
     <form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
         <!--the ngForm here says: give me access to the JS object behind the html form-->
-    <div class="form-group">
-        <label for="content">Content</label>
-        <input 
-        type="text"
-        class="form-control"
-        id="content"
-        name="content"
-        required
-        [ngModel]="message?.content"> <!-- the '?' mark says: do this only if message is not undefined -->
-    </div>
-    <button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
-    <button class="btn btn-primary" type="submit">Save</button>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <input
+                    type="text"
+                    id="content"
+                    class="form-control"
+                    [ngModel]="message?.content"
+                    name="content"
+                    required><!-- the '?' mark says: do this only if message is not undefined -->
+        </div>
+        <button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
+        <button class="btn btn-primary" type="submit">Save</button>
     </form>
 </div>

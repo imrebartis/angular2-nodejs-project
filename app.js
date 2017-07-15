@@ -5,14 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.Promise = global.Promise; 
 
 var appRoutes = require('./routes/app');
 var messageRoutes = require('./routes/messages');
-var userRoutes = require('./routes/user');
 
 var app = express();
-mongoose.connect('localhost:27017/node-angular');
+mongoose.connect('localhost:27017/angular2-nodejs-project');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,7 +32,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/message', messageRoutes); //IMPORTANT: MORE SPECIFIC ROUTES HAVE TO BE LISTED FIRST
-app.use('/user', userRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler, BECAUSE OF THIS E.G. /AUTH WORKS EVEN THOUGH IN ROUTES/APP.JS WE DON'T HAVE SUCH A ROUTE

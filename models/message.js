@@ -1,13 +1,9 @@
-/*jshint esversion: 6 */
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const mongoose = require("mongoose");
-const Schema   = mongoose.Schema;
+var schema = new Schema({
+    content: {type: String, required: true},
+    user: {type: Schema.Types.ObjectId, ref: 'User'}
+});
 
-const schema = new Schema({
-  content: {type: String, required: true},
-  user: {type: Schema.Types.ObjectId, ref: 'User'}
-  });
-
-const Message = mongoose.model("Message", schema);
-
-module.exports = Message;
+module.exports = mongoose.model('Message', schema);

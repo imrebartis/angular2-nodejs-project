@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-@Component( {
+@Component({
     selector: 'app-logout',
     template: `
         <div class="col-md-8 col-md-offset-2">
@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
         </div>
     `
 })
-
 export class LogoutComponent {
-        onLogout()
+    onLogout() {
+
+    }
 }

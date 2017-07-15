@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-@Component( {
+@Component({
     selector: 'app-header',
     template: `
         <header class="row">
@@ -12,9 +12,7 @@ import { Component } from '@angular/core';
             </nav>
         </header>
     `
-
 })
-
 export class HeaderComponent {
 
 }
